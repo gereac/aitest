@@ -1,0 +1,14 @@
+{
+  "name": "cloudflare-ai-ui-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UI app powered by Cloudflare Workers AI",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.11.1"
+  }
+}

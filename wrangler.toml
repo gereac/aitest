@@ -1,0 +1,6 @@
+name = "cloudflare-ai-ui-app"
+main = "src/worker.js"
+compatibility_date = "2026-04-06"
+
+[ai]
+binding = "AI"
