@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: . # CHANGE this to your build output folder
+          path: dist # CHANGE this to your build output folder
 
   #Set path: to your output folder
   #Plain HTML repo → .
