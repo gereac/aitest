@@ -2,13 +2,21 @@
   "name": "cloudflare-ai-ui-app",
   "version": "1.0.0",
   "private": true,
-  "description": "UI app powered by Cloudflare Workers AI",
+  "description": "Bundled React UI powered by Cloudflare Workers AI",
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "build": "vite build",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.10",
     "wrangler": "^4.11.1"
   }
 }
