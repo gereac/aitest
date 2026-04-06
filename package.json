@@ -7,6 +7,10 @@
   "scripts": {
     "build": "vite build",
     "dev": "npm run build && wrangler dev",
+    "dev:client:watch": "vite build --watch",
+    "dev:worker": "wrangler dev",
+    "dev:split": "npm run build",
+    "dev:all": "npm run dev:split && concurrently -k -n client,worker -c cyan,green \"npm run dev:client:watch\" \"npm run dev:worker\"",
     "deploy": "npm run build && wrangler deploy",
     "preview": "vite preview"
   },
@@ -15,8 +19,9 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.10",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.2.1",
+    "vite": "^6.4.2",
     "wrangler": "^4.11.1"
   }
 }

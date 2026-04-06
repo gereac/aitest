@@ -38,6 +38,44 @@ npm run dev
 
 Then open the local URL shown by Wrangler (usually `http://127.0.0.1:8787`).
 
+## Split Dev (Two Terminals)
+
+Use this mode to keep frontend rebuild and Worker runtime as separate processes.
+
+1. Prepare the initial `dist` output once:
+
+```bash
+npm run dev:split
+```
+
+2. Terminal 1: watch frontend bundle updates:
+
+```bash
+npm run dev:client:watch
+```
+
+3. Terminal 2: run Worker dev server:
+
+```bash
+npm run dev:worker
+```
+
+In this setup, Vite continuously rebuilds to `dist` while Wrangler serves the Worker and static assets.
+
+## Split Dev (Single Command)
+
+You can also run both processes from one terminal via a process manager:
+
+```bash
+npm run dev:all
+```
+
+This command:
+
+- Builds once to prepare `dist`
+- Starts Vite build watch (`dev:client:watch`)
+- Starts Wrangler dev server (`dev:worker`)
+
 ## Build Frontend Only
 
 ```bash
