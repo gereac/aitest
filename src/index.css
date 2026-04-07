@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --color-railway-50: oklch(97% 0.01 250);
+  --color-railway-100: oklch(93% 0.02 250);
+  --color-railway-200: oklch(85% 0.03 250);
+  --color-railway-500: oklch(60% 0.08 250);
+  --color-railway-800: oklch(30% 0.04 250);
+  --color-railway-900: oklch(20% 0.03 250);
+  --color-railway-950: oklch(14% 0.02 250);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(40% 0.04 250) transparent;
+  }
+
+  ::selection {
+    background-color: oklch(50% 0.1 250 / 0.4);
+    color: oklch(95% 0.01 250);
+  }
+
+  body {
+    background-color: oklch(14% 0.02 250);
+    color: oklch(85% 0.03 250);
+    transition: background-color 0.2s, color 0.2s;
+  }
+}
+
+@layer components {
+  .blueprint-grid {
+    background-image:
+      linear-gradient(oklch(30% 0.04 250 / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(30% 0.04 250 / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
