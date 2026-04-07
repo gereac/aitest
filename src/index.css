@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode (toggled via .dark on <html>) */
+@variant dark (&:is(.dark *));
+
 @theme {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
   --color-railway-50: oklch(97% 0.01 250);
   --color-railway-100: oklch(93% 0.02 250);
@@ -14,6 +17,18 @@
 }
 
 @layer base {
+  :root {
+    --bg: oklch(97% 0.01 250);
+    --fg: oklch(20% 0.03 250);
+    --border: oklch(85% 0.03 250);
+  }
+
+  :root.dark {
+    --bg: oklch(14% 0.02 250);
+    --fg: oklch(85% 0.03 250);
+    --border: oklch(30% 0.04 250);
+  }
+
   *,
   *::before,
   *::after {
@@ -27,9 +42,11 @@
   }
 
   body {
-    background-color: oklch(14% 0.02 250);
-    color: oklch(85% 0.03 250);
-    transition: background-color 0.2s, color 0.2s;
+    background-color: var(--bg);
+    color: var(--fg);
+    transition:
+      background-color 0.2s,
+      color 0.2s;
   }
 }
 
